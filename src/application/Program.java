@@ -1,6 +1,6 @@
 package application;
 
-import chess.model.entities.ChessMatch;
+import chess.ChessMatch;
 
 public class Program {
     public static void main(String[] args) {
