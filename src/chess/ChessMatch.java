@@ -23,32 +23,33 @@ public class ChessMatch {
         return mat;
     }
 
+    private void placeNewPiece(char column, int row, ChessPiece piece){
+        board.placePiece(piece, new ChessPosition(column, row).toPosition());
+    }
+
     private void initialSetup(){
-        board.placePiece(new Torre(board, Color.WHITE), new Position(0,0));
-        board.placePiece(new Cavalo(board, Color.WHITE), new Position(0,1));
-        board.placePiece(new Bispo(board, Color.WHITE), new Position(0,2));
-        board.placePiece(new Rei(board, Color.WHITE), new Position(0,3));
-        board.placePiece(new Dama(board, Color.WHITE), new Position(0,4));
-        board.placePiece(new Bispo(board, Color.WHITE), new Position(0,5));
-        board.placePiece(new Cavalo(board, Color.WHITE), new Position(0,6));
-        board.placePiece(new Torre(board, Color.WHITE), new Position(0,7));
-        for (int i = 1; i == 1;i++){
-            for (int j = 0; j < board.getColumns();j++){
-                board.placePiece(new Peao(board, Color.WHITE), new Position(i,j));
-            }
+        placeNewPiece('a', 8, new Torre(board, Color.WHITE));
+        placeNewPiece('b',8,new Cavalo(board, Color.WHITE));
+        placeNewPiece('c',8,new Bispo(board, Color.WHITE));
+        placeNewPiece('d',8,new Rei(board, Color.WHITE));
+        placeNewPiece('e',8,new Dama(board, Color.WHITE));
+        placeNewPiece('f',8,new Bispo(board, Color.WHITE));
+        placeNewPiece('g',8,new Cavalo(board, Color.WHITE));
+        placeNewPiece('h',8,new Torre(board, Color.WHITE));
+        for (int i = 'a'; i <= 'h' ;i++){
+            placeNewPiece((char)(i), 7, new Peao(board, Color.WHITE));
         }
-        for (int i = 6; i == 6;i++){
-            for (int j = 0; j < board.getColumns();j++){
-                board.placePiece(new Peao(board, Color.BLACK), new Position(i,j));
-            }
+
+        for (int i = 'a'; i <= 'h';i++){
+            placeNewPiece((char)(i),2, new Peao(board, Color.BLACK));
         }
-        board.placePiece(new Torre(board, Color.WHITE), new Position(7,0));
-        board.placePiece(new Cavalo(board, Color.WHITE), new Position(7,1));
-        board.placePiece(new Bispo(board, Color.WHITE), new Position(7,2));
-        board.placePiece(new Rei(board, Color.WHITE), new Position(7,3));
-        board.placePiece(new Dama(board, Color.WHITE), new Position(7,4));
-        board.placePiece(new Bispo(board, Color.WHITE), new Position(7,5));
-        board.placePiece(new Cavalo(board, Color.WHITE), new Position(7,6));
-        board.placePiece(new Torre(board, Color.WHITE), new Position(7,7));
+        placeNewPiece('a',1,new Torre(board, Color.BLACK));
+        placeNewPiece('b',1,new Cavalo(board, Color.BLACK));
+        placeNewPiece('c',1,new Bispo(board, Color.BLACK));
+        placeNewPiece('d',1,new Rei(board, Color.BLACK));
+        placeNewPiece('e',1,new Dama(board, Color.BLACK));
+        placeNewPiece('f',1,new Bispo(board, Color.BLACK));
+        placeNewPiece('g',1,new Cavalo(board, Color.BLACK));
+        placeNewPiece('h',1,new Torre(board, Color.BLACK));          
     }
 }
