@@ -52,6 +52,8 @@ public class UI {
         printBoard(chessMatch.getPieces());
         System.out.println();
         printCapturedPieces(captured);
+        System.out.println("Turno: " + chessMatch.getTurn());
+        System.out.println("Aguandando o jogador: " + chessMatch.getCurrentPlayer());
 
     }
 
