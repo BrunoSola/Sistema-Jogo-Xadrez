@@ -30,7 +30,6 @@ public class Torre extends ChessPiece {
         if (getBoard().positionExists(positionAux) && isThereOpponentPiece(positionAux)){
             mat[positionAux.getRow()][positionAux.getColumn()] = true;
         }
-
         // Acima
         positionAux.setValues(position.getRow() + 1, position.getColumn());
         while (getBoard().positionExists(positionAux) && !getBoard().thereIsAPiece(positionAux)){
@@ -40,7 +39,6 @@ public class Torre extends ChessPiece {
         if (getBoard().positionExists(positionAux) && isThereOpponentPiece(positionAux)){
             mat[positionAux.getRow()][positionAux.getColumn()] = true;
         }
-
         // Esquerda
         positionAux.setValues(position.getRow(), position.getColumn() - 1);
         while (getBoard().positionExists(positionAux) && !getBoard().thereIsAPiece(positionAux)){
@@ -50,7 +48,6 @@ public class Torre extends ChessPiece {
         if (getBoard().positionExists(positionAux) && isThereOpponentPiece(positionAux)){
             mat[positionAux.getRow()][positionAux.getColumn()] = true;
         }
-
         // Direita
         positionAux.setValues(position.getRow(), position.getColumn() + 1);
         while (getBoard().positionExists(positionAux) && !getBoard().thereIsAPiece(positionAux)){
@@ -60,7 +57,6 @@ public class Torre extends ChessPiece {
         if (getBoard().positionExists(positionAux) && isThereOpponentPiece(positionAux)){
             mat[positionAux.getRow()][positionAux.getColumn()] = true;
         }
-
         return mat;
     }
 }
