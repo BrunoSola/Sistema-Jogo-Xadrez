@@ -10,7 +10,7 @@ public class ChessPosition {
 
     public ChessPosition(Character column, Integer row) {
         if (column < 'a' || column > 'h' || row < 1 || row > 8){
-            throw new ChessException("Não foi possivel instanciar ChessPosition. Valores validos de a1 ate h8.");
+            throw new ChessException("N\u00E3o foi possivel instanciar ChessPosition. Valores validos de a1 ate h8.");
         }
         this.column = column;
         this.row = row;

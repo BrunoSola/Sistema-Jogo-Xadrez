@@ -23,6 +23,9 @@ public class Program {
                 System.out.println();
                 System.out.print("Source: ");
                 ChessPosition source = UI.readChessPosition(in);
+                boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+                UI.clearScreen();
+                UI.printBoard(chessMatch.getPieces(), possibleMoves);
                 System.out.println();
                 System.out.print("Target: ");
                 ChessPosition target = UI.readChessPosition(in);
@@ -31,16 +34,11 @@ public class Program {
                 if (capturedPiece != null){
                     captured.add(capturedPiece);
                 }
-            }catch (ChessException e){
-                System.out.println(e.getMessage());
-                in.nextLine();
-            }
-            catch (InputMismatchException e){
+            }catch (ChessException | InputMismatchException e){
                 System.out.println(e.getMessage());
                 in.nextLine();
             }
         }
-
 
     }
 }
