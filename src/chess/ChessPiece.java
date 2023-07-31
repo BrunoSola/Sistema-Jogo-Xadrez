@@ -4,7 +4,6 @@ import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
 import chess.enums.Color;
-import org.ietf.jgss.Oid;
 
 public abstract class ChessPiece extends Piece {
 
