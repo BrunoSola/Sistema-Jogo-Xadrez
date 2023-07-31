@@ -44,7 +44,7 @@ public class UI {
             return new ChessPosition(column, row);
         }
         catch (RuntimeException e){
-            throw new InputMismatchException("Erro ao ler a posi\u00E7ão: Valores valido entre a1 e h8.");
+            throw new InputMismatchException("Houve um erro ao ler a posição: valores validos entre a1 e h8.");
         }
     }
 
@@ -53,8 +53,10 @@ public class UI {
         System.out.println();
         printCapturedPieces(captured);
         System.out.println("Turno: " + chessMatch.getTurn());
-        System.out.println("Aguandando o jogador: " + chessMatch.getCurrentPlayer());
-
+        System.out.println("Aguardando o jogador: " + chessMatch.getCurrentPlayer());
+        if (chessMatch.getCheck()){
+            System.out.println("CHECK!");
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces){
@@ -100,12 +102,12 @@ public class UI {
         List<ChessPiece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());
         List<ChessPiece> black = captured.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
 
-        System.out.println("Pe\u00E7as Capturadas: "); // \u00E7 = ç
-        System.out.print("White: ");
+        System.out.println("Peças Capturadas: "); // \u00E7 = ç
+        System.out.print("Branca: ");
         System.out.print(ANSI_WHITE);
         System.out.println(Arrays.toString(white.toArray()));
-        System.out.println(ANSI_RESET);
-        System.out.print("Black: ");
+        System.out.print(ANSI_RESET);
+        System.out.print("Preta: ");
         System.out.print(ANSI_YELLOW);
         System.out.println(Arrays.toString(black.toArray()));
         System.out.println(ANSI_RESET);

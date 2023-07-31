@@ -27,7 +27,7 @@ public class Peao extends ChessPiece {
             }
             positionAux.setValues(position.getRow() - 2, position.getColumn());
             Position positionAux2 = new Position(position.getRow() - 1, position.getColumn());
-            if (getBoard().positionExists(positionAux) && !getBoard().thereIsAPiece(positionAux) && getBoard().positionExists(positionAux2) && !getBoard().thereIsAPiece(positionAux2)) {
+            if (getBoard().positionExists(positionAux) && !getBoard().thereIsAPiece(positionAux) && getBoard().positionExists(positionAux2) && !getBoard().thereIsAPiece(positionAux2) && getMoveCount() ==  0) {
                 mat[positionAux.getRow()][positionAux.getColumn()] = true;
             }
             positionAux.setValues(position.getRow() - 1, position.getColumn() - 1);
@@ -46,7 +46,7 @@ public class Peao extends ChessPiece {
             }
             positionAux.setValues(position.getRow() + 2, position.getColumn());
             Position positionAux2 = new Position(position.getRow() + 1, position.getColumn());
-            if (getBoard().positionExists(positionAux) && !getBoard().thereIsAPiece(positionAux) && getBoard().positionExists(positionAux2) && !getBoard().thereIsAPiece(positionAux2)) {
+            if (getBoard().positionExists(positionAux) && !getBoard().thereIsAPiece(positionAux) && getBoard().positionExists(positionAux2) && !getBoard().thereIsAPiece(positionAux2) && getMoveCount() == 0) {
                 mat[positionAux.getRow()][positionAux.getColumn()] = true;
             }
             positionAux.setValues(position.getRow() + 1, position.getColumn() - 1);
