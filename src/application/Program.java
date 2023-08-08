@@ -34,6 +34,17 @@ public class Program {
                 if (capturedPiece != null){
                     captured.add(capturedPiece);
                 }
+
+                if (chessMatch.getPromoted() != null){
+                    String type;
+                    do {
+                        System.out.print("Deseja promover para qual tipo de peça (B/C/D/T): ");
+                        type = in.nextLine().toUpperCase();
+                    }
+                    while(!type.equals("B") && !type.equals("C") && !type.equals("D") && !type.equals("T"));{
+                        chessMatch.replacePromotedPiece(type);
+                    }
+                }
             }catch (ChessException | InputMismatchException e){
                 System.out.println(e.getMessage());
                 in.nextLine();
